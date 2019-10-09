@@ -1,8 +1,8 @@
 from flask import Flask
 
-from models import db
-from controllers.main import main_blueprint
-from controllers.blog import blog_blueprint
+from .models import db
+from .controllers.main import main_blueprint
+from .controllers.blog import blog_blueprint
 
 
 def create_app(object_name):
