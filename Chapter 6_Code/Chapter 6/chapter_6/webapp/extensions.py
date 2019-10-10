@@ -1,9 +1,9 @@
 from flask import flash, redirect, url_for, session
-from flask.ext.bcrypt import Bcrypt
-from flask.ext.openid import OpenID
+from flask_bcrypt import Bcrypt
+from flask_openid import OpenID
 from flask_oauth import OAuth
-from flask.ext.login import LoginManager
-from flask.ext.principal import Principal, Permission, RoleNeed
+from flask_login import LoginManager
+from flask_principal import Principal, Permission, RoleNeed
 
 bcrypt = Bcrypt()
 oid = OpenID()
@@ -24,13 +24,13 @@ login_manager.login_message_category = "info"
 
 @login_manager.user_loader
 def load_user(userid):
-    from models import User
+    from .models import User
     return User.query.get(userid)
 
 
 @oid.after_login
 def create_or_login(resp):
-    from models import db, User
+    from .models import db, User
     username = resp.fullname or resp.nickname or resp.email
 
     if not username:

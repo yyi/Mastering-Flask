@@ -2,7 +2,7 @@ from flask_wtf import Form, RecaptchaField
 from wtforms import StringField, TextAreaField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Length, EqualTo, URL
 
-from webapp.models import User
+from .models import User
 
 
 class CommentForm(Form):

@@ -1,5 +1,5 @@
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.login import AnonymousUserMixin
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import AnonymousUserMixin
 
 from webapp.extensions import bcrypt
 
@@ -60,7 +60,7 @@ class User(db.Model):
             return False
 
     def get_id(self):
-        return unicode(self.id)
+        return self.id
 
 
 class Role(db.Model):

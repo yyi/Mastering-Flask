@@ -6,8 +6,8 @@ from flask import (render_template,
                    request,
                    flash,
                    session)
-from flask.ext.login import login_user, logout_user
-from flask.ext.principal import (
+from flask_login import login_user, logout_user
+from flask_principal import (
     Identity,
     AnonymousIdentity,
     identity_changed

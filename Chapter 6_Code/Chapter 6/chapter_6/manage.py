@@ -1,7 +1,7 @@
 import os
 
-from flask.ext.script import Manager, Server
-from flask.ext.migrate import Migrate, MigrateCommand
+from flask_script import Manager, Server
+from flask_migrate import Migrate, MigrateCommand
 
 from webapp import create_app
 from webapp.models import db, User, Post, Tag, Comment
